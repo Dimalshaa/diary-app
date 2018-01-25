@@ -4,7 +4,7 @@
       ,event._id]"></i>
     <i class="right floated red trash large link icon" (click)="onDelete(event)"></i>
     <div class="header">{{ event.title }}</div>
-    <div class="meta">Date</div>
+    <div class="meta">{{ event.date | date }}</div>
     <div class="description">
       <p> {{ event.content }} </p>
     </div>

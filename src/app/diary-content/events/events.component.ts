@@ -26,7 +26,7 @@ export class EventsComponent implements OnInit {
       );
   }
   toggleFav(event: Events) {
-    this.eventDataService.editEvent(event._id, event.title, event.content, !event.favorite)
+    this.eventDataService.editEvent(event._id, event.title, event.content, event.date, !event.favorite)
       .subscribe(
         (response) => {
           if (response.status === 200) {

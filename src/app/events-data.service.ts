@@ -9,11 +9,11 @@ export class EventsDataService {
 
   constructor(private http: Http, private router: Router) {}
 
-  addEvent(title: string, content: string) {
+  addEvent(title: string, content: string, date: string) {
     // this.events.push(new Events(title,content));
     const URI = `${this.serverAPI}/event`;
     const headers = new Headers({'Content-type' : 'application/json'});
-    const body = JSON.stringify({title: title, content: content, favorite: false});
+    const body = JSON.stringify({title: title, content: content, date: date, favorite: false});
     return this.http.post(URI, body,
       {headers: headers});
   }
@@ -42,7 +42,7 @@ export class EventsDataService {
     const URI = `${this.serverAPI}/event/${eventID}`;
     return this.http.delete(URI);
   }
-  editEvent(eventID: string, title: string, content: string, fav: boolean) {
+  editEvent(eventID: string, title: string, content: string, date: string, fav: boolean) {
     const URI = `${this.serverAPI}/event/${eventID}`;
     const headers = new Headers({'Content-type' : 'application/json'});
     const body = JSON.stringify({title: title, content: content, favorite: fav});

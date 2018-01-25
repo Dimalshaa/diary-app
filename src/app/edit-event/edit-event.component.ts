@@ -29,7 +29,7 @@ export class EditEventComponent implements OnInit {
     const value = form.value;
     if (value.content) {
       this.eventDataService.editEvent(this.eventData._id,
-        value.title, value.content,
+        value.title, value.content, this.eventData.date,
         this.eventData.favorite)
         .subscribe(
           (response) => {
