@@ -1,0 +1,34 @@
+<div class="ui grid container">
+  <div class="row">
+    <div style="height: 20px"></div>
+    <div class="four wide column grid"></div>
+    <div class="six wide column grid">
+      <h3 class="hed">EDIT</h3>
+      <form class="ui form" (ngSubmit)="onEditEvent(f)" #f="ngForm">
+
+        <div class="field">
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" [(ngModel)]="eventData.title" required>
+        </div>
+
+        <div class="field">
+          <label for="event">Content</label>
+          <textarea id="event" name="content" [(ngModel)]="eventData.content" required></textarea>
+        </div>
+        <button class="ui animated green button" type="submit">
+          <div class="visible content">Update</div>
+          <div class="hidden content">
+            <i class="checkmark icon"></i>
+          </div>
+        </button>
+        <button class="ui animated red button" type="reset" routerLink="/diary">
+          <div class="visible content">Cancel</div>
+          <div class="hidden content">
+            <i class="remove icon"></i>
+          </div>
+        </button>
+      </form>
+    </div>
+
+  </div>
+</div>

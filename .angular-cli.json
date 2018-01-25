@@ -19,7 +19,15 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "../node_modules/semantic-ui-grid/grid.min.css",
+        "../node_modules/semantic-ui-icon/icon.min.css",
+        "../node_modules/semantic-ui-menu/menu.min.css",
+        "../node_modules/semantic-ui-form/form.min.css",
+        "../node_modules/semantic-ui-button/button.min.css",
+        "../node_modules/semantic-ui-card/card.min.css",
+        "../node_modules/semantic-ui-popup/popup.min.css",
+        "../node_modules/semantic-ui-segment/segment.min.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

@@ -1,0 +1,22 @@
+<div class="ui grid container">
+  <div class="row">
+    <div class="three wide column grid timeline" style="margin-left: 10px; margin-right: -10px">
+      <app-timeline></app-timeline>
+    </div>
+    <!-- *****************app restructure change 8-01-18****************************-->
+    <!--***************** Deleted input event component 8-01 ***********************-->
+    <!--<div class="col-sm-3"></div>-->
+    <!--<div class="col-sm-6">-->
+      <!--<div class="row">-->
+        <!--<div class="col-sm-12">-->
+          <!--<app-input-event></app-input-event>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<br>-->
+    <div class="twelve wide column grid">
+      <app-events *ngFor="let evene of eventData" [event]="evene"
+        (eventDeleted)="deleteEvent($event)"
+        (favClicked)="favToggle($event)"></app-events>
+    </div>
+  </div>
+</div>
