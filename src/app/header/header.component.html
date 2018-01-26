@@ -1,40 +1,4 @@
-<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
-  <!--<a class="navbar-brand" routerLink="/home">My Diary</a>-->
-  <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
-    <!--<span class="navbar-toggler-icon"></span>-->
-  <!--</button>-->
-
-  <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">-->
-    <!--<ul class="navbar-nav mr-auto">-->
-      <!--<li class="nav-item active" routerLinkActive="active">-->
-        <!--<a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>-->
-      <!--</li>-->
-      <!--<li class="nav-item" routerLinkActive="active">-->
-        <!--<a class="nav-link" routerLink="/diary">Diary</a>-->
-      <!--</li>-->
-    <!--</ul>-->
-    <!--<span class="navbar-text">-->
-      <!--{{ userName }}-->
-    <!--</span>-->
-    <!--&lt;!&ndash;<form class="form-inline my-2 my-lg-0">&ndash;&gt;-->
-      <!--&lt;!&ndash;<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">&ndash;&gt;-->
-      <!--&lt;!&ndash;<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>&ndash;&gt;-->
-    <!--&lt;!&ndash;</form>&ndash;&gt;-->
-  <!--</div>-->
-<!--</nav>-->
-<!--<div class="ui sidebar inverted vertical menu">-->
-  <!--<a class="item">-->
-    <!--Item 1-->
-  <!--</a>-->
-  <!--<a class="item">-->
-    <!--Item 2-->
-  <!--</a>-->
-  <!--<a class="item">-->
-    <!--Item 3-->
-  <!--</a>-->
-  <!--<div class="pusher">-->
-<!--</div>-->
-<div class="ui inverted borderless menu">
+<div class="ui fixed inverted borderless menu mobile-hide">
   <a class="header item" routerLink="/home">
     <i class="large inverted book icon"></i>My Diary
   </a>
@@ -52,4 +16,10 @@
       Logout
     </a>
   </div>
+</div>
+<div class="ui inverted fixed borderless menu large-hide small-hide tablet-hide">
+  <a class="item left" href="#"><i class="sidebar icon"></i></a>
+  <a class="header item right" routerLink="/home">
+    <i class="large inverted book icon"></i>My Diary
+  </a>
 </div>

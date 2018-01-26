@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Events } from '../../events.model';
-import { EventsDataService } from '../../events-data.service';
+import { Events } from '../../shared/events.model';
+import { EventsDataService } from '../../shared/events-data.service';
 
 @Component({
   selector: 'app-events',

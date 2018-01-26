@@ -11,7 +11,7 @@ import { DiaryContentComponent } from './diary-content/diary-content.component';
 import { TimelineComponent } from './diary-content/timeline/timeline.component';
 import { EventsComponent } from './diary-content/events/events.component';
 import { HomeInputComponent } from './home-input/home-input.component';
-import { EventsDataService } from './events-data.service';
+import { EventsDataService } from './shared/events-data.service';
 import { EditEventComponent } from './edit-event/edit-event.component';
 
 const appRoutes: Routes = [

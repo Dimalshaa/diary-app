@@ -1,7 +1,7 @@
 import {Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { EventsDataService } from '../events-data.service';
-import { Events } from '../events.model';
+import { EventsDataService } from '../shared/events-data.service';
+import { Events } from '../shared/events.model';
 
 @Component({
   selector: 'app-home-input',
