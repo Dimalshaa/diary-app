@@ -6,28 +6,28 @@
       <h3 class="hed">Welcome to your Diary</h3>
       <form class="ui form" (ngSubmit)="onAddEvent(f)" #f="ngForm">
 
-          <div class="field">
-            <label for="title">Title</label>
-            <input type="text" id="title" name="title" ngModel required>
-          </div>
+        <div class="field">
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" ngModel required>
+        </div>
 
-          <div class="field">
-            <label for="event">Content</label>
-            <textarea id="event" name="content" ngModel required></textarea>
-          </div>
+        <div class="field">
+          <label for="event">Content</label>
+          <textarea id="event" name="content" ngModel required></textarea>
+        </div>
 
-        <button class="ui animated primary button" type="submit">
+        <div class="ui animated primary button" (click)="f.ngSubmit.emit()">
           <div class="visible content">Submit</div>
           <div class="hidden content">
             <i class="send icon"></i>
           </div>
-        </button>
-        <button class="ui animated red button" type="reset">
+        </div>
+        <div class="ui animated red button" (click)="f.reset()">
           <div class="visible content">Discard</div>
           <div class="hidden content">
             <i class="trash icon"></i>
           </div>
-        </button>
+        </div>
       </form>
     </div>
 

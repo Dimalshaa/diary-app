@@ -15,12 +15,12 @@
           <label for="event">Content</label>
           <textarea id="event" name="content" [(ngModel)]="eventData.content" required></textarea>
         </div>
-        <button class="ui animated green button" type="submit">
+        <div class="ui animated primary button" (click)="f.ngSubmit.emit()">
           <div class="visible content">Update</div>
           <div class="hidden content">
             <i class="checkmark icon"></i>
           </div>
-        </button>
+        </div>
         <button class="ui animated red button" type="reset" routerLink="/diary">
           <div class="visible content">Cancel</div>
           <div class="hidden content">
