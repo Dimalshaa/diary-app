@@ -1,16 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
-.bac {
-  /*background-image: url("../../assets/writing-a-book.jpg");*/
-  /*background-repeat: no-repeat;*/
-  /*background-position: center;*/
-  /*background-blend-mode: lighten;*/
-  /*background-size: length;*/
-}
 label {
   font-family: "Didact Gothic";
 }
 .hed {
-  padding-left: 22%;
   font-family: pacifico;
-  font-size: 180%;
+  font-size: 170%;
 }

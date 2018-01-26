@@ -1,9 +1,11 @@
 <div class="ui grid container">
-  <div class="row bac">
-    <div style="height: 20px"></div>
-    <div class="four wide column grid"></div>
-    <div class="six wide column grid">
-      <h3 class="hed">Welcome to your Diary</h3>
+  <div class="six column row centered" >
+    <div style="height: 30px"></div>
+    <div class="hed">Welcome to your Diary</div>
+  </div>
+  <div class="row">
+    <div class="one wide mobile four wide computer column grid"></div>
+    <div class="thirteen wide mobile six wide computer column grid">
       <form class="ui form" (ngSubmit)="onAddEvent(f)" #f="ngForm">
 
         <div class="field">

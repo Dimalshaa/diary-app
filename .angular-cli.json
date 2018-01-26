@@ -27,7 +27,9 @@
         "../node_modules/semantic-ui-button/button.min.css",
         "../node_modules/semantic-ui-card/card.min.css",
         "../node_modules/semantic-ui-popup/popup.min.css",
-        "../node_modules/semantic-ui-segment/segment.min.css"
+        "../node_modules/semantic-ui-segment/segment.min.css",
+        "../node_modules/semantic-ui-header/header.min.css",
+        "../node_modules/semantic-ui-sidebar/sidebar.min.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js"
