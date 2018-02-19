@@ -18,8 +18,23 @@
   </div>
 </div>
 <div class="ui inverted fixed borderless menu large-hide small-hide tablet-hide">
-  <a class="item left" href="#"><i class="sidebar icon"></i></a>
+  <a class="item left" (click)="sidebar.toggle()"><i class="sidebar icon"></i></a>
   <a class="header item right" routerLink="/home">
     <i class="large inverted book icon"></i>My Diary
   </a>
 </div>
+<sui-sidebar-container>
+  <sui-sidebar class="inverted vertical" [transition]="'push'" #sidebar>
+    <a class="item item11" routerLink="/home" routerLinkActive="active" (click)="sidebar.close()">Home</a>
+    <a class="item" routerLink="/diary" routerLinkActive="active" (click)="sidebar.close()">Diary</a>
+  </sui-sidebar>
+  <sui-sidebar-sibling [isDimmedWhenVisible]="true">
+    <!--<div class="ui basic segment">-->
+      <!--<h3 class="ui header">Content</h3>-->
+      <!--<p>Example content beside the sidebar</p>-->
+      <!--<button class="ui button" (click)="sidebar.open()">Open Sidebar</button>-->
+    <!--</div>-->
+    <router-outlet></router-outlet>
+  </sui-sidebar-sibling>
+
+</sui-sidebar-container>

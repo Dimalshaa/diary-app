@@ -1,7 +1,6 @@
 <div class="ui raised fluid card">
   <div class="content">
-    <i class="right floated blue edit large link icon" [routerLink]="['/edit-diary'
-      ,event._id]"></i>
+    <i class="right floated blue edit large link icon" [routerLink]="['/edit-diary',event._id]"></i>
     <i class="right floated red trash large link icon" (click)="onDelete(event)"></i>
     <div class="header">{{ event.title }}</div>
     <div class="meta">{{ event.date | date }}</div>

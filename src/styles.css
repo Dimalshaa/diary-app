@@ -3,6 +3,7 @@ body {
   font-family: "Didact Gothic" !important;
   font-size: 110%;
   overflow-x: hidden;
+  margin: 0;
 }
 
 /* Mobile */
