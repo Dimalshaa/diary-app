@@ -2,7 +2,7 @@
   <div class="row">
     <div style="height: 20px"></div>
     <div class="four wide column grid"></div>
-    <div class="six wide column grid">
+    <div class="six wide column center aligned grid">
       <h3 class="hed">EDIT</h3>
       <form class="ui form" (ngSubmit)="onEditEvent(f)" #f="ngForm">
 
@@ -21,7 +21,7 @@
             <i class="checkmark icon"></i>
           </div>
         </div>
-        <div class="ui animated red button" type="reset" routerLink="/diary">
+        <div class="ui animated red button" type="reset" [routerLink]="['/diary', 'events']">
           <div class="visible content">Cancel</div>
           <div class="hidden content">
             <i class="remove icon"></i>

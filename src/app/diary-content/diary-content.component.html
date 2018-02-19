@@ -16,9 +16,8 @@
       <!--<br>-->
 
     <div class="sixteen wide mobile sixteen wide computer column grid">
-      <app-events *ngFor="let evene of eventData" [event]="evene"
-        (eventDeleted)="deleteEvent($event)"
-        (favClicked)="favToggle($event)"></app-events>
+      <!--<app-events></app-events>-->
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

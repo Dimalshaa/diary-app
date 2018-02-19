@@ -5,7 +5,7 @@
   <a class="item" routerLink="/home" routerLinkActive="active">
     Home
   </a>
-  <a class="item" routerLink="/diary" routerLinkActive="active">
+  <a class="item" [routerLink]="['/diary', 'events']" routerLinkActive="active">
     Diary
   </a>
   <div class="right menu">
@@ -26,7 +26,7 @@
 <sui-sidebar-container>
   <sui-sidebar class="inverted vertical" [transition]="'push'" #sidebar>
     <a class="item item11" routerLink="/home" routerLinkActive="active" (click)="sidebar.close()">Home</a>
-    <a class="item" routerLink="/diary" routerLinkActive="active" (click)="sidebar.close()">Diary</a>
+    <a class="item" [routerLink]="['/diary', 'events']" routerLinkActive="active" (click)="sidebar.close()">Diary</a>
   </sui-sidebar>
   <sui-sidebar-sibling [isDimmedWhenVisible]="true">
     <!--<div class="ui basic segment">-->

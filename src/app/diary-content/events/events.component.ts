@@ -8,31 +8,24 @@ import { EventsDataService } from '../../shared/events-data.service';
   styleUrls: ['./events.component.css']
 })
 export class EventsComponent implements OnInit {
-  @Input() event: Events;
-  @Output() eventDeleted = new EventEmitter<Events>();
-  @Output() favClicked = new EventEmitter<Events>();
+  eventData: Events[];
   constructor(private eventDataService: EventsDataService) { }
 
   ngOnInit() {
-  }
-
-  onDelete(event: Events) {
-    this.eventDataService.onDelete(event._id)
+    this.eventDataService.getAllEvent()
       .subscribe(
-        (resp) => {
-          this.eventDeleted.emit(event);
+        (events) => {
+          this.eventData = events;
         },
         (error) => console.log(error)
       );
   }
-  toggleFav(event: Events) {
-    this.eventDataService.editEvent(event._id, event.title, event.content, event.date, !event.favorite)
-      .subscribe(
-        (response) => {
-          if (response.status === 200) {
-            this.favClicked.emit(event);
-          }
-        }
-      );
+  deleteEvent(event: Events) {
+    const val = this.eventData.indexOf(event);
+    this.eventData.splice(val,1);
+  }
+  favToggle(event: Events) {
+    const val = this.eventData.indexOf(event);
+    this.eventData[val].favorite = !this.eventData[val].favorite;
   }
 }

@@ -13,12 +13,15 @@ import { EventsComponent } from './diary-content/events/events.component';
 import { HomeInputComponent } from './home-input/home-input.component';
 import { EventsDataService } from './shared/events-data.service';
 import { EditEventComponent } from './diary-content/edit-event/edit-event.component';
+import { EventComponent } from './diary-content/events/event/event.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: HomeInputComponent },
-  { path: 'diary', component: DiaryContentComponent },
-  { path: 'edit-diary/:id', component: EditEventComponent }
+  { path: 'diary', component: DiaryContentComponent, children: [
+    { path: 'events', component: EventsComponent },
+    { path: 'edit/:id', component: EditEventComponent }
+  ]},
 ];
 
 @NgModule({
@@ -29,7 +32,8 @@ const appRoutes: Routes = [
     DiaryContentComponent,
     EventsComponent,
     HomeInputComponent,
-    EditEventComponent
+    EditEventComponent,
+    EventComponent
   ],
   imports: [
     BrowserModule,

@@ -1,22 +1,25 @@
-<div class="ui raised fluid card">
-  <div class="content">
-    <i class="right floated blue edit large link icon" [routerLink]="['/edit-diary',event._id]"></i>
-    <i class="right floated red trash large link icon" (click)="onDelete(event)"></i>
-    <div class="header">{{ event.title }}</div>
-    <div class="meta">{{ event.date | date }}</div>
-    <div class="description">
-      <p> {{ event.content }} </p>
-    </div>
-  </div>
-  <div class="extra content">
-    <!--<span class="left floated like tex">-->
-      <!--<i class="like icon"></i>-->
-      <!--Like-->
+<!--<div class="ui raised fluid card">-->
+  <!--<div class="content">-->
+    <!--<i class="right floated blue edit large link icon" [routerLink]="['/edit-diary',event._id]"></i>-->
+    <!--<i class="right floated red trash large link icon" (click)="onDelete(event)"></i>-->
+    <!--<div class="header">{{ event.title }}</div>-->
+    <!--<div class="meta">{{ event.date | date }}</div>-->
+    <!--<div class="description">-->
+      <!--<p> {{ event.content }} </p>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="extra content">-->
+    <!--&lt;!&ndash;<span class="left floated like tex">&ndash;&gt;-->
+      <!--&lt;!&ndash;<i class="like icon"></i>&ndash;&gt;-->
+      <!--&lt;!&ndash;Like&ndash;&gt;-->
+    <!--&lt;!&ndash;</span>&ndash;&gt;-->
+    <!--<span class="left floated star tex">-->
+      <!--<i class="star icon" [ngClass]="{'yellow': event.favorite===true}" (click)="toggleFav(event)"></i>-->
+      <!--Favorite-->
     <!--</span>-->
-    <span class="left floated star tex">
-      <i class="star icon" [ngClass]="{'yellow': event.favorite===true}" (click)="toggleFav(event)"></i>
-      Favorite
-    </span>
-  </div>
-</div>
-<div class="div" style="width: 20px;"></div>
+  <!--</div>-->
+<!--</div>-->
+<!--<div class="div" style="width: 20px;"></div>-->
+<app-event *ngFor="let evene of eventData" [event]="evene"
+            (eventDeleted)="deleteEvent($event)"
+            (favClicked)="favToggle($event)"></app-event>
