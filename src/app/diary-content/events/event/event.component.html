@@ -2,10 +2,11 @@
   <div class="content">
     <i class="right floated blue edit large link icon" [routerLink]="['/diary','edit',event._id]"></i>
     <i class="right floated red trash large link icon" (click)="onDelete(event)"></i>
+    <i class="right floated green expand arrows alternate large link icon" [routerLink]="['/diary','view',event._id]"></i>
     <div class="header">{{ event.title }}</div>
     <div class="meta">{{ event.date | date }}</div>
     <div class="description">
-      <p> {{ event.content }} </p>
+      <p> {{ (event.content.length>value)? (event.content | slice: 0:value)+'...':(event.content) }}</p>
     </div>
   </div>
   <div class="extra content">

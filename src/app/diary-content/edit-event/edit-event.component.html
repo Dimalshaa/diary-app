@@ -1,19 +1,19 @@
 <div class="ui grid container">
-  <div class="row">
+  <div class="row centered" style="margin-left: 15px">
     <div style="height: 20px"></div>
-    <div class="four wide column grid"></div>
-    <div class="six wide column center aligned grid">
+    <!--<div class="four wide column grid"></div>-->
+    <div class="fourteen wide mobile eight wide computer column center aligned grid">
       <h3 class="hed">EDIT</h3>
       <form class="ui form" (ngSubmit)="onEditEvent(f)" #f="ngForm">
 
-        <div class="field">
+        <div class="fourteen wide mobile eight wide computer field">
           <label for="title">Title</label>
           <input type="text" id="title" name="title" [(ngModel)]="eventData.title" required>
         </div>
 
-        <div class="field">
+        <div class="fourteen wide mobile eight wide computer field">
           <label for="event">Content</label>
-          <textarea id="event" name="content" [(ngModel)]="eventData.content" required></textarea>
+          <textarea id="event" rows="12" name="content" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" [(ngModel)]="eventData.content" required></textarea>
         </div>
         <div class="ui animated primary button" (click)="f.ngSubmit.emit()">
           <div class="visible content">Update</div>

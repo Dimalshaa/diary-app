@@ -3,19 +3,19 @@
     <div style="height: 30px"></div>
     <div class="hed">Welcome to your Diary</div>
   </div>
-  <div class="row">
-    <div class="one wide mobile four wide computer column grid"></div>
-    <div class="ten wide mobile eight wide computer column center aligned grid">
+  <div class="row centered" style="margin-left: 15px">
+    <!--<div class="one wide mobile two wide computer column grid"></div>-->
+    <div class="fourteen wide mobile eight wide computer column center aligned grid">
       <form class="ui form" (ngSubmit)="onAddEvent(f)" #f="ngForm">
 
-        <div class="field">
+        <div class="fourteen wide mobile eight wide computer field">
           <label for="title">Title</label>
           <input type="text" id="title" name="title" ngModel required>
         </div>
 
-        <div class="field">
+        <div class="fourteen wide mobile eight wide computer field">
           <label for="event">Content</label>
-          <textarea id="event" name="content" ngModel required></textarea>
+          <textarea id="event" rows="12" name="content" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" ngModel required></textarea>
         </div>
 
         <div class="ui animated primary button" (click)="f.ngSubmit.emit()">
@@ -31,7 +31,9 @@
           </div>
         </div>
       </form>
-    </div>
+    <!--</div>-->
 
   </div>
+    <!--<div class="one wide mobile two wide computer column grid"></div>-->
+</div>
 </div>

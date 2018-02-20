@@ -9,8 +9,8 @@ import { EventsDataService } from '../../../shared/events-data.service';
 })
 export class EventComponent implements OnInit {
   @Input() event: Events;
-  @Output() eventDeleted = new EventEmitter<Events>();
-  @Output() favClicked = new EventEmitter<Events>();
+  value = 2500;
+
   constructor(private eventDataService: EventsDataService) { }
 
   ngOnInit() {
@@ -19,20 +19,14 @@ export class EventComponent implements OnInit {
   onDelete(event: Events) {
     this.eventDataService.onDelete(event._id)
       .subscribe(
-        (resp) => {
-          this.eventDeleted.emit(event);
-        },
-        (error) => console.log(error)
+        () => this.eventDataService.eventDelSub.next(event)
       );
   }
+
   toggleFav(event: Events) {
     this.eventDataService.editEvent(event._id, event.title, event.content, event.date, !event.favorite)
       .subscribe(
-        (response) => {
-          if (response.status === 200) {
-            this.favClicked.emit(event);
-          }
-        }
+        () => this.eventDataService.favTogSub.next(event)
       );
   }
 }

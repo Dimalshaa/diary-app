@@ -19,7 +19,7 @@ export class EditEventComponent implements OnInit {
     const id = this.route.snapshot.params['id'];
     this.eventDataService.getEvent(id)
       .subscribe(
-        (events) => {
+        (events: Events) => {
           this.eventData = events;
         },
         (error) => console.log(error)
@@ -32,11 +32,9 @@ export class EditEventComponent implements OnInit {
         value.title, value.content, this.eventData.date,
         this.eventData.favorite)
         .subscribe(
-          (response) => {
-            if (response.status === 200) {
+          () => {
               form.reset();
               this.location.back();
-            }
           }
         );
     }
