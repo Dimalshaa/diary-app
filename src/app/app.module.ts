@@ -17,12 +17,14 @@ import { EventComponent } from './diary-content/events/event/event.component';
 import { ViewEventComponent } from './diary-content/view-event/view-event.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { AuthService } from './shared/auth.service';
+import { AuthGuard } from './shared/auth-gaurd';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeInputComponent },
-  { path: 'diary', component: DiaryContentComponent, children: [
+  { path: 'home', canActivate: [AuthGuard], component: HomeInputComponent },
+  { path: 'diary', canActivate: [AuthGuard], component: DiaryContentComponent, children: [
     { path: 'events', component: EventsComponent },
     { path: 'edit/:id', component: EditEventComponent },
     { path: 'view/:id', component: ViewEventComponent },
@@ -52,7 +54,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     HttpClientModule
   ],
-  providers: [EventsDataService],
+  providers: [AuthGuard, EventsDataService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

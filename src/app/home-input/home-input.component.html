@@ -1,29 +1,31 @@
-<div class="row">
-  <div class="col-xs-12 col-lg-6 offset-lg-3">
-    <h3 class="text-center">
-      Welcome to your Diary
-    </h3>
-    <form (ngSubmit)="onAddEvent(f)" #f="ngForm">
-      <section class="form-block">
-        <div class="form-group row">
-          <div class="col-xs-12">
-            <label for="title">Title</label>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-lg-6 offset-lg-3">
+      <h3 class="text-center">
+        Welcome to your Diary
+      </h3>
+      <form (ngSubmit)="onAddEvent(f)" #f="ngForm">
+        <section class="form-block">
+          <div class="form-group row">
+            <div class="col-xs-12">
+              <label for="title">Title</label>
+            </div>
+            <div class="col-xs-12">
+              <input class="form-control" type="text" id="title" name="title" ngModel required>
+            </div>
           </div>
-          <div class="col-xs-12">
-            <input class="form-control" type="text" id="title" name="title" ngModel required>
+          <div class="form-group row">
+            <div class="col-xs-12">
+              <label for="event">Content</label>
+            </div>
+            <div class="col-xs-12">
+              <textarea id="event" rows="8" name="content" autocomplete="off" spellcheck="false" ngModel required class="form-control"></textarea>
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <div class="col-xs-12">
-            <label for="event">Content</label>
-          </div>
-          <div class="col-xs-12">
-            <textarea id="event" rows="8" name="content" autocomplete="off" spellcheck="false" ngModel required class="form-control"></textarea>
-          </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Save</button>
-        <button type="reset" class="btn btn-secondary">Reset</button>
-      </section>
-    </form>
+          <button type="submit" class="btn btn-primary">Save</button>
+          <button type="reset" class="btn btn-secondary">Reset</button>
+        </section>
+      </form>
+    </div>
   </div>
 </div>

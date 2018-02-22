@@ -1,17 +1,17 @@
-<header class="header-6">
+<clr-header class="header-6" *ngIf="isLoggedIn | async">
   <div class="branding">
     <a routerLink="/home" class="nav-link">
       <clr-icon shape="vm-bug"></clr-icon>
       <span class="title">My Diary</span>
     </a>
   </div>
-  <div class="header-nav">
+  <div class="header-nav" [clr-nav-level]="1">
     <a routerLink="/home" routerLinkActive="active" class="nav-link"><span class="nav-text">Home</span></a>
     <a [routerLink]="['/diary']" routerLinkActive="active" class="nav-link"><span class="nav-text">Diary</span></a>
   </div>
   <div class="header-actions">
-    <a class="nav-link nav-icon">
-      <clr-icon shape="cog"></clr-icon>
+    <a class="nav-link nav-text" (click)="onLogout()">
+      Log Out
     </a>
   </div>
-</header>
+</clr-header>

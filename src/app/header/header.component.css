@@ -1,9 +1,6 @@
 a {
   outline: 0;
 }
-.item11 {
-  margin-top: 54px;
-}
-sui-sidebar-sibling {
-  /*height: 100vh;*/
+.nav-link {
+  cursor: pointer;
 }
