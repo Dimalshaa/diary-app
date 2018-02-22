@@ -1,23 +1,37 @@
-<div class="ui raised fluid card">
-  <div class="content">
-    <i class="right floated blue edit large link icon" [routerLink]="['/diary','edit',event._id]"></i>
-    <i class="right floated red trash large link icon" (click)="onDelete(event)"></i>
-    <i class="right floated green expand arrows alternate large link icon" [routerLink]="['/diary','view',event._id]"></i>
-    <div class="header">{{ event.title }}</div>
-    <div class="meta">{{ event.date | date }}</div>
-    <div class="description">
-      <p> {{ (event.content.length>value)? (event.content | slice: 0:value)+'...':(event.content) }}</p>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="card">
+      <div class="card-header">
+        <strong>{{ event.title }}</strong>
+        <div style="float: right; margin-top: -5px">
+          <button class="btn btn-sm btn-link" [routerLink]="['/diary','view',event._id]" *ngIf="contentLength===2500; else minimizeButton">
+            <clr-icon shape="resize-up" size="22" class=""></clr-icon>
+          </button>
+          <ng-template #minimizeButton>
+            <button class="btn btn-sm btn-link" [routerLink]="['/diary','events']">
+              <clr-icon shape="resize-down" size="22" class=""></clr-icon>
+            </button>
+          </ng-template>
+          <button class="btn btn-sm btn-link" [routerLink]="['/diary','edit',event._id]">
+            <clr-icon shape="pencil" size="22"></clr-icon>
+          </button>
+          <button class="btn btn-sm btn-link" (click)="onDelete(event)">
+            <clr-icon shape="trash" size="22"></clr-icon>
+          </button>
+        </div>
+      </div>
+      <div class="card-block">
+        <div class="card-text">
+          {{ (event.content.length>contentLength)? (event.content | slice: 0:contentLength)+'...':(event.content)}}
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-sm btn-link" (click)="toggleFav(event)">
+          <clr-icon shape="heart" size="22" [ngClass]="{'is-solid': event.favorite===true}"></clr-icon>
+        </button>
+        <div style="float: right">{{ event.date | date }}</div>
+      </div>
     </div>
   </div>
-  <div class="extra content">
-    <!--<span class="left floated like tex">-->
-    <!--<i class="like icon"></i>-->
-    <!--Like-->
-    <!--</span>-->
-    <span class="left floated star tex">
-      <i class="star icon" [ngClass]="{'yellow': event.favorite===true}" (click)="toggleFav(event)"></i>
-      Favorite
-    </span>
-  </div>
 </div>
-<div class="div" style="width: 20px;"></div>
+

@@ -1,39 +1,29 @@
-<div class="ui grid" style="padding-top: 30px;">
-  <div class="six column row centered" >
-    <div style="height: 30px"></div>
-    <div class="hed">Welcome to your Diary</div>
-  </div>
-  <div class="row centered" style="margin-left: 15px">
-    <!--<div class="one wide mobile two wide computer column grid"></div>-->
-    <div class="fourteen wide mobile eight wide computer column center aligned grid">
-      <form class="ui form" (ngSubmit)="onAddEvent(f)" #f="ngForm">
-
-        <div class="fourteen wide mobile eight wide computer field">
-          <label for="title">Title</label>
-          <input type="text" id="title" name="title" ngModel required>
-        </div>
-
-        <div class="fourteen wide mobile eight wide computer field">
-          <label for="event">Content</label>
-          <textarea id="event" rows="12" name="content" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" ngModel required></textarea>
-        </div>
-
-        <div class="ui animated primary button" (click)="f.ngSubmit.emit()">
-          <div class="visible content">Submit</div>
-          <div class="hidden content">
-            <i class="send icon"></i>
+<div class="row">
+  <div class="col-xs-12 col-lg-6 offset-lg-3">
+    <h3 class="text-center">
+      Welcome to your Diary
+    </h3>
+    <form (ngSubmit)="onAddEvent(f)" #f="ngForm">
+      <section class="form-block">
+        <div class="form-group row">
+          <div class="col-xs-12">
+            <label for="title">Title</label>
+          </div>
+          <div class="col-xs-12">
+            <input class="form-control" type="text" id="title" name="title" ngModel required>
           </div>
         </div>
-        <div class="ui animated red button" (click)="f.reset()">
-          <div class="visible content">Discard</div>
-          <div class="hidden content">
-            <i class="trash icon"></i>
+        <div class="form-group row">
+          <div class="col-xs-12">
+            <label for="event">Content</label>
+          </div>
+          <div class="col-xs-12">
+            <textarea id="event" rows="8" name="content" autocomplete="off" spellcheck="false" ngModel required class="form-control"></textarea>
           </div>
         </div>
-      </form>
-    <!--</div>-->
-
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="reset" class="btn btn-secondary">Reset</button>
+      </section>
+    </form>
   </div>
-    <!--<div class="one wide mobile two wide computer column grid"></div>-->
-</div>
 </div>

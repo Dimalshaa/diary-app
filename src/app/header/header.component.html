@@ -1,40 +1,17 @@
-<div class="ui fixed inverted borderless menu mobile-hide">
-  <a class="header item" routerLink="/home">
-    <i class="large inverted book icon"></i>My Diary
-  </a>
-  <a class="item" routerLink="/home" routerLinkActive="active">
-    Home
-  </a>
-  <a class="item" [routerLink]="['/diary']" routerLinkActive="active">
-    Diary
-  </a>
-  <div class="right menu">
-    <div class="item">
-      <div class="ui positive button">Sign Up</div>
-    </div>
-    <a class="ui item">
-      Logout
+<header class="header-6">
+  <div class="branding">
+    <a routerLink="/home" class="nav-link">
+      <clr-icon shape="vm-bug"></clr-icon>
+      <span class="title">My Diary</span>
     </a>
   </div>
-</div>
-<div class="ui inverted fixed borderless menu large-hide small-hide tablet-hide">
-  <a class="item left" (click)="sidebar.toggle()"><i class="sidebar icon"></i></a>
-  <a class="header item right" routerLink="/home">
-    <i class="large inverted book icon"></i>My Diary
-  </a>
-</div>
-<sui-sidebar-container>
-  <sui-sidebar class="inverted vertical" [transition]="'push'" #sidebar>
-    <a class="item item11" routerLink="/home" routerLinkActive="active" (click)="sidebar.close()">Home</a>
-    <a class="item" [routerLink]="['/diary', 'events']" routerLinkActive="active" (click)="sidebar.close()">Diary</a>
-  </sui-sidebar>
-  <sui-sidebar-sibling [isDimmedWhenVisible]="true">
-    <!--<div class="ui basic segment">-->
-      <!--<h3 class="ui header">Content</h3>-->
-      <!--<p>Example content beside the sidebar</p>-->
-      <!--<button class="ui button" (click)="sidebar.open()">Open Sidebar</button>-->
-    <!--</div>-->
-    <router-outlet></router-outlet>
-  </sui-sidebar-sibling>
-
-</sui-sidebar-container>
+  <div class="header-nav">
+    <a routerLink="/home" routerLinkActive="active" class="nav-link"><span class="nav-text">Home</span></a>
+    <a [routerLink]="['/diary']" routerLinkActive="active" class="nav-link"><span class="nav-text">Diary</span></a>
+  </div>
+  <div class="header-actions">
+    <a class="nav-link nav-icon">
+      <clr-icon shape="cog"></clr-icon>
+    </a>
+  </div>
+</header>

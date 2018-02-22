@@ -5,5 +5,5 @@ a {
   margin-top: 54px;
 }
 sui-sidebar-sibling {
-  height: 100%;
+  /*height: 100vh;*/
 }

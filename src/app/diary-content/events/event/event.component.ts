@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Events } from '../../../shared/events.model';
 import { EventsDataService } from '../../../shared/events-data.service';
 
@@ -9,7 +9,7 @@ import { EventsDataService } from '../../../shared/events-data.service';
 })
 export class EventComponent implements OnInit {
   @Input() event: Events;
-  value = 2500;
+  @Input() contentLength: number;
 
   constructor(private eventDataService: EventsDataService) { }
 
@@ -24,7 +24,7 @@ export class EventComponent implements OnInit {
   }
 
   toggleFav(event: Events) {
-    this.eventDataService.editEvent(event._id, event.title, event.content, event.date, !event.favorite)
+    this.eventDataService.editEvent(event._id, event.title, event.content, !event.favorite)
       .subscribe(
         () => this.eventDataService.favTogSub.next(event)
       );

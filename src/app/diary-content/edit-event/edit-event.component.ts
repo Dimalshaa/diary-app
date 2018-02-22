@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EventsDataService } from '../../shared/events-data.service';
 import { Events } from '../../shared/events.model';
 import { NgForm } from '@angular/forms';
-import {  ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
@@ -29,7 +29,7 @@ export class EditEventComponent implements OnInit {
     const value = form.value;
     if (value.content) {
       this.eventDataService.editEvent(this.eventData._id,
-        value.title, value.content, this.eventData.date,
+        value.title, value.content,
         this.eventData.favorite)
         .subscribe(
           () => {

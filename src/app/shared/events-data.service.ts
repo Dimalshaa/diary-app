@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Events } from './events.model';
-import {Subject} from 'rxjs/Subject';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class EventsDataService {
   serverAPI = 'http://localhost:3000';
-  eventDelSub = new Subject();
-  favTogSub = new Subject();
+  eventDelSub = new Subject<Events>();
+  favTogSub = new Subject<Events>();
 
   constructor(private http: HttpClient) {}
 
@@ -33,7 +33,7 @@ export class EventsDataService {
     return this.http.delete(URI);
   }
 
-  editEvent(eventID: string, title: string, content: string, date: string, fav: boolean) {
+  editEvent(eventID: string, title: string, content: string, fav: boolean) {
     const URI = `${this.serverAPI}/event/${eventID}`;
     const headers = new HttpHeaders().set('Content-type', 'application/json');
     const body = JSON.stringify({title: title, content: content, favorite: fav});
