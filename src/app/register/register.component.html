@@ -1,0 +1,19 @@
+<div class="login-wrapper">
+  <form class="login" (ngSubmit)="onRegister(f)" #f="ngForm">
+    <label class="title text-center">
+      Welcome to your Diary
+    </label>
+    <div class="login-group">
+      <input class="username" type="text" id="firstname" name="firstname" placeholder="First Name" ngModel>
+      <input class="username" type="text" id="lastname" name="lastname" placeholder="Last Name" ngModel>
+      <input class="username" type="text" id="login_username" name="username" placeholder="Username" ngModel>
+      <input class="password" type="password" id="login_password" name="password" placeholder="Password" ngModel>
+      <div class="error" [ngClass]="{active: regFail}">
+        Registration failed. Try again!
+      </div>
+      <button type="submit" class="btn btn-primary">Register</button>
+      <a class="signup" routerLink="/login">Already registered? Login here</a>
+    </div>
+  </form>
+</div>
+

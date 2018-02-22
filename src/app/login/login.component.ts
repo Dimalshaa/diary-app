@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../shared/auth.service';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +15,11 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.authService.isLoggedIn
-      .subscribe((check: true) => this.router.navigate(['/diary', 'events']));
+      .subscribe((check) => {
+        if (check) {
+          this.router.navigate(['/diary', 'events']);
+        }
+      });
   }
 
   onLogin(form: NgForm) {
@@ -25,7 +29,7 @@ export class LoginComponent implements OnInit {
         if (res.success) {
           this.authService.loggedIn.next(true);
           localStorage.setItem('currentUser', JSON.stringify({ username: form.value.username, token: token }));
-          this.router.navigate(['/diary', 'events']);
+          this.router.navigate(['/home']);
         } else {
           this.loginFail = true;
         }

@@ -1,1 +1,13 @@
+<div class="row" *ngIf="eventData.length === 0">
+  <div class="col-xs-12">
+    <br><br>
+    <h3 class="text-center">
+      <clr-icon shape="sad-face" size="50"></clr-icon> &nbsp; No events to display!
+    </h3>
+    <br>
+    <div class="text-center">
+      <button class="btn btn-primary" [routerLink]="['/home']">Add Event</button>
+    </div>
+  </div>
+</div>
 <app-event *ngFor="let even of eventData" [event]="even" [contentLength]="2500" ></app-event>

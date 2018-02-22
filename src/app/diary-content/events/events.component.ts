@@ -32,12 +32,10 @@ export class EventsComponent implements OnInit, OnDestroy {
   }
   deleteEvent(event: Events) {
     const val = this.eventData.indexOf(event);
-    console.log(val);
     this.eventData.splice(val, 1);
   }
   favToggle(event: Events) {
     const val = this.eventData.indexOf(event);
-    console.log(this.eventData);
     this.eventData[val].favorite = !this.eventData[val].favorite;
   }
 
