@@ -4,7 +4,7 @@
       <div class="card-header">
         <strong>{{ event.title }}</strong>
         <div style="float: right; margin-top: -5px">
-          <button class="btn btn-sm btn-link" [routerLink]="['/diary','view',event._id]" *ngIf="contentLength===2500; else minimizeButton">
+          <button class="btn btn-sm btn-link" [routerLink]="['/diary','view',event.id]" *ngIf="contentLength===2500; else minimizeButton">
             <clr-icon shape="resize-up" size="22" class=""></clr-icon>
           </button>
           <ng-template #minimizeButton>
@@ -12,7 +12,7 @@
               <clr-icon shape="resize-down" size="22" class=""></clr-icon>
             </button>
           </ng-template>
-          <button class="btn btn-sm btn-link" [routerLink]="['/diary','edit',event._id]">
+          <button class="btn btn-sm btn-link" [routerLink]="['/diary','edit',event.id]">
             <clr-icon shape="pencil" size="22"></clr-icon>
           </button>
           <button class="btn btn-sm btn-link" (click)="onDelete(event)">

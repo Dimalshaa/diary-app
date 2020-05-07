@@ -24,15 +24,12 @@ export class LoginComponent implements OnInit {
 
   onLogin(form: NgForm) {
     this.authService.login(form.value.username, form.value.password)
-      .subscribe((res: {status: string, success: boolean, token: string}) => {
-        const token = res.token;
-        if (res.success) {
+      .subscribe((res: any) => {
+        const token = res.id_token;
           this.authService.loggedIn.next(true);
           localStorage.setItem('currentUser', JSON.stringify({ username: form.value.username, token: token }));
           this.router.navigate(['/home']);
-        } else {
-          this.loginFail = true;
-        }
+        
       },
         () => {
         console.log('Check username/password or internet connection');

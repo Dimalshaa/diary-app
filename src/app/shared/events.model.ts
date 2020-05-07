@@ -1,7 +1,7 @@
-export interface Events {
-  _id?: string;
+export class Events {
+  id?: string;
   title: string;
   content: string;
   date: string;
-  favorite: boolean;
+  favorite = false;
 }

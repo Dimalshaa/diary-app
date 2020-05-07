@@ -19,10 +19,14 @@ export class HomeInputComponent implements OnInit {
     const value = form.value;
     if (value.content) {
       const d = new Date();
-      this.eventsDataService.addEvent(value.title, value.content, d + '')
+      const event = new Events();
+      event.content = value.content;
+      event.title = value.title;
+      event.id = null;
+      this.eventsDataService.addEvent(event)
         .subscribe(
           () => {
-              this.event = {_id: '', title: form.value.title, content: form.value.content, date: d + '', favorite: false};
+              this.event = {id: '', title: form.value.title, content: form.value.content, date: d + '', favorite: false};
               form.reset();
           }
         );

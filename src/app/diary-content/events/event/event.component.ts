@@ -17,14 +17,14 @@ export class EventComponent implements OnInit {
   }
 
   onDelete(event: Events) {
-    this.eventDataService.onDelete(event._id)
+    this.eventDataService.onDelete(event.id)
       .subscribe(
         () => this.eventDataService.eventDelSub.next(event)
       );
   }
 
   toggleFav(event: Events) {
-    this.eventDataService.editEvent(event._id, event.title, event.content, !event.favorite)
+    this.eventDataService.editEvent({...event, favorite: !event.favorite})
       .subscribe(
         () => this.eventDataService.favTogSub.next(event)
       );

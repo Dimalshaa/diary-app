@@ -28,9 +28,12 @@ export class EditEventComponent implements OnInit {
   onEditEvent(form: NgForm) {
     const value = form.value;
     if (value.content) {
-      this.eventDataService.editEvent(this.eventData._id,
-        value.title, value.content,
-        this.eventData.favorite)
+      const event = new Events();
+      event.id = this.eventData.id;
+      event.title = value.title;
+      event.content = value.content;
+      event.favorite = this.eventData.favorite;
+      this.eventDataService.editEvent(event)
         .subscribe(
           () => {
               form.reset();
