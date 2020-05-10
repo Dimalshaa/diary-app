@@ -4,4 +4,5 @@ export class Events {
   content: string;
   date: string;
   favorite = false;
+  warning: boolean;
 }
